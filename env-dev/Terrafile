@@ -1,0 +1,3 @@
+vpc:
+    source:  "https://github.com/samsung150973/tf-module-vpc.git"
+    version: "main"
