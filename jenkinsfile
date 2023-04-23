@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    parameters { choice(name: 'ENV', choices: ['dev', 'prod'], description: 'choose the environment')}
     stages { 
         stage ('terrafform Init') {
              steps {
