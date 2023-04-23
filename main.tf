@@ -1,6 +1,6 @@
 #the code will be sourced through the below repository
 module "vpc" {
-  source = "https://github.com/samsung150973/tf-module-vpc.git=dev"
+  source = "vendor/modules/vpc"
 }
 
 # The above link will always from main branch. 
