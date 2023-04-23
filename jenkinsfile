@@ -1,20 +1,23 @@
 pipeline {
     agent any
-    stages {
-        steps{
-            sh "terraform init -backend-config=${ENV}/${ENV}-backend.tfvars"
+    stages { 
+        stage ('terrafform Init') {
+             steps {
+                sh "terraform init -backend-config=${ENV}/${ENV}-backend.tfvars"
+            }
         }
-    }
-
-    stages {
-        steps{
-            sh "terraform plan -var.file=${ENV}/${ENV}.tfvars"
+       
+        stage('terrafform plan') {
+            steps {
+                sh "terraform plan -var.file=${ENV}/${ENV}.tfvars"
+            }
         }
-    }
     
-    stages {
-        steps{
-            sh "terraform apply -var.file=${ENV}/${ENV}.tfvars -auto-approve"
+        stage('terrafform plan') {
+            steps {
+                sh "terraform apply -var.file=${ENV}/${ENV}.tfvars -auto-approve"
         }
     }
+   }
 }
+
