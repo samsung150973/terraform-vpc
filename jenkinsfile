@@ -3,19 +3,19 @@ pipeline {
     parameters { choice(name: 'ENV', choices: ['dev', 'prod'], description: 'choose the environment')}
     stages {
         steps{
-            sh."terraform init -backend-config=${ENV}/${ENV}-backend.tfvars"
+            sh "terraform init -backend-config=${ENV}/${ENV}-backend.tfvars"
         }
     }
 
     stages {
         steps{
-            sh."terraform plan -var.file=${ENV}/${ENV}.tfvars"
+            sh "terraform plan -var.file=${ENV}/${ENV}.tfvars"
         }
     }
     
     stages {
         steps{
-            sh."terraform apply -var.file=${ENV}/${ENV}.tfvar -auto-approve"
+            sh "terraform apply -var.file=${ENV}/${ENV}.tfvars -auto-approve"
         }
     }
 }
