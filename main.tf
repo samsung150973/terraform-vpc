@@ -2,6 +2,7 @@
 module "vpc" {
   source = "./vendor/modules/vpc"
   VPC_CIDR = var.VPC_CIDR
+  ENV = var.ENV
 }
 
 # The above link will always from main branch. 
