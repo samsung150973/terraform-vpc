@@ -1,6 +1,11 @@
 pipeline {
     agent any
-    parameters { choice(name: 'ENV', choices: ['dev', 'prod'], description: 'select') }
+    
+    parameters { 
+        choice(name: 'ENV', choices: ['dev', 'prod'], description: 'select') 
+        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'action Apply or Destroy')
+        }
+    
     stages { 
         stage ('terrafform Init') {
              steps {
