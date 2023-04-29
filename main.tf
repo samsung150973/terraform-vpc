@@ -1,6 +1,6 @@
 #the code will be sourced through the below repository
 module "vpc" {
-  source = "./vendor/modules/vpc"
+  source = "vendor/modules/vpc"
   VPC_CIDR = var.VPC_CIDR
   ENV = var.ENV
 }
